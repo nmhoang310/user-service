@@ -132,9 +132,9 @@ public class UserLogicImpl implements IUserLogic {
 		    .build();
 
 			try {
-				System.out.println("response: "+request.bodyPublisher());
+				System.out.println("req: "+request.bodyPublisher());
 				HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-				System.out.println("response: "+response);
+				System.out.println("res: "+response);
 			} catch (java.io.IOException | InterruptedException e) {
 				e.printStackTrace();
 			}	

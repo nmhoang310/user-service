@@ -25,12 +25,17 @@ import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/api/v0/user")
-@CrossOrigin("http://localhost:3000")
+//@CrossOrigin("http://localhost:3000")
 @Slf4j
 public class UserController {
 
 	@Autowired
 	private IUserService userService;
+	
+	 @GetMapping ("/secret-info")
+	    private ResponseEntity secretInfo(){
+	        return ResponseEntity.ok("This secret is no secret!");
+	    }
 	
 	@PostMapping("/register")
 	public ResponseEntity<Void> registerUser(@RequestBody UserEntity user) {
